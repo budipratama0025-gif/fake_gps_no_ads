@@ -14,6 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Extract Android project
+        run: |
+          unzip -o fake_gps_basic_project.zip -d extracted
+          cp -a extracted/. .
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
